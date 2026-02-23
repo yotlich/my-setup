@@ -34,3 +34,8 @@
   dd bs=4M conv=fsync oflag=direct status=progress \
   if=./archlinux-x86_64.iso of=/dev/disk/by-id/usb-ВЫБРАННАЯ-ФЛЕШКА
   ```
+
+## Запуск установочного образа
+
+1. Настройках BIOS отключить Secure Boot и выставить флешку первой в списке загрузки
+2. В появившимся меню выбрать Arch Linux install medium для запуска live-окружения
