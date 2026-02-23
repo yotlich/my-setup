@@ -117,3 +117,27 @@
    ```console
    cryptsetup open /dev/disk/by-partlabel/main root
    ```
+
+## Файловые системы
+
+1. Загрузочный раздел
+
+   ```console
+   mkfs.vfat -F32 -n ESP /dev/disk/by-partlabel/uefi
+   ```
+
+2. Основной раздел
+
+   ```console
+   mkfs.ext4 -L root /dev/mapper/root
+   ```
+
+3. Монтирование разделов для установки
+
+   ```console
+   mount --mkdir LABEL=root /mnt
+   ```
+
+   ```console
+   mount --mkdir LABEL=ESP -o umask=0077 /mnt/efi
+   ```
