@@ -101,3 +101,19 @@
    --new=2:0:0   --typecode=2:8304 --change-name=2:main \
    /dev/nvme0n1
    ```
+
+## Шифрование диска
+
+1. Создать LUKS контейнер
+
+   ```console
+   cryptsetup -v --use-random \
+   luksFormat --type=luks2 --label=container \
+   /dev/disk/by-partlabel/main
+   ```
+
+2. Открыть созданный контейнер
+
+   ```console
+   cryptsetup open /dev/disk/by-partlabel/main root
+   ```

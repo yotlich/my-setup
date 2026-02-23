@@ -3,10 +3,13 @@
   "cSpell.words": [
     "archlinux",
     "conv",
+    "cryptsetup",
     "dgst",
     "fdisk",
+    "luks",
     "nvme",
     "oflag",
+    "partlabel",
     "sgdisk",
     "timedatectl",
     "typecode",
