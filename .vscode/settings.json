@@ -4,8 +4,12 @@
     "archlinux",
     "conv",
     "dgst",
+    "fdisk",
+    "nvme",
     "oflag",
+    "sgdisk",
     "timedatectl",
+    "typecode",
     "UEFI",
     "ventoy"
   ]

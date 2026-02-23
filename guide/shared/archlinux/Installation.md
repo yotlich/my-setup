@@ -76,3 +76,28 @@
    >               NTP service: active
    >           RTC in local TZ: no
    > ```
+
+## Разметка диска
+
+1. Получить путь к диску на который будет установлена система
+
+   ```console
+   fdisk -l
+   ```
+
+   > Диск этом руководстве: `/dev/nvme0n1`
+
+2. Удаление старой таблицы и всех данных с диска
+
+   ```console
+   sgdisk --zap-all /dev/nvme0n1
+   ```
+
+3. Создание таблицы разделов
+
+   ```console
+   sgdisk --clear --align-end \
+   --new=1:0:+1G --typecode=1:EF00 --change-name=1:uefi \
+   --new=2:0:0   --typecode=2:8304 --change-name=2:main \
+   /dev/nvme0n1
+   ```
