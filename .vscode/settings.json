@@ -5,6 +5,8 @@
     "conv",
     "dgst",
     "oflag",
+    "timedatectl",
+    "UEFI",
     "ventoy"
   ]
 }

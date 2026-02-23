@@ -40,3 +40,39 @@
 1. Настройках BIOS отключить Secure Boot и выставить флешку первой в списке загрузки
 
 2. В появившимся меню выбрать Arch Linux install medium для запуска live-окружения
+
+## Проверки перед установки
+
+1. Система запушена в режиме UEFI и имеет 64-разрядную архитектуру
+
+   ```console
+   cat /sys/firmware/efi/fw_platform_size
+   ```
+
+   > Результат: `64`
+
+2. Подключение к интернету
+
+   ```console
+   ping -c 5 ping.archlinux.org
+   ```
+
+   > Если ответы приходят, то подключение к интернету есть
+
+3. Правильные дата и время
+
+   ```console
+   timedatectl status
+   ```
+
+   > Результат:
+   >
+   > ```console
+   >                Local time: ПРАВИЛЬНОЕ ВРЕМЯ в UTC
+   >            Universal time: ПРАВИЛЬНОЕ ВРЕМЯ в UTC
+   >                  RTC time: ПРАВИЛЬНОЕ ВРЕМЯ в UTC
+   >                 Time zone: UTC (UTC, +0000)
+   > System clock synchronized: yes
+   >               NTP service: active
+   >           RTC in local TZ: no
+   > ```
