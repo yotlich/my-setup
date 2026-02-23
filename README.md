@@ -1,2 +1,1 @@
-# my-setup
-A little guide to yotlich's only workspace
+# Руководство по моим настройкам
